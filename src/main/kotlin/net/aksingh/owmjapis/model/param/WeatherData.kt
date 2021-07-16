@@ -51,6 +51,12 @@ data class WeatherData(
   @field:SerializedName("sys")
   val systemData: System? = null,
 
+  @field:SerializedName("rain")
+  val rainData: Rain? = null,
+
+  @field:SerializedName("snow")
+  val snowData: Snow? = null,
+
   @field:SerializedName("dt_txt")
   val dateTimeText: String? = null
 ) {
@@ -79,7 +85,11 @@ data class WeatherData(
 
   fun hasWindData(): Boolean = windData != null
 
-  fun hassystemData(): Boolean = systemData != null
+  fun hasSystemData(): Boolean = systemData != null
+
+  fun hasRainData(): Boolean = rainData != null
+
+  fun hasSnowData(): Boolean = snowData != null
 
   fun hasDateTimeText(): Boolean = dateTimeText != null
 
