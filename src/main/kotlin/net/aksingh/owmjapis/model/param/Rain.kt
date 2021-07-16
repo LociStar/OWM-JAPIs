@@ -24,7 +24,8 @@ import com.google.gson.annotations.SerializedName
 
 data class Rain(
   @field:SerializedName("1h")
-  val precipVol1h: Double? = null
+  val precipVol1h: Double? = null,
+
   @field:SerializedName("3h")
   val precipVol3h: Double? = null
 ) {
