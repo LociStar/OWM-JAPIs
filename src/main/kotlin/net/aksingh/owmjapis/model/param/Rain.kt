@@ -23,11 +23,14 @@ import com.google.gson.GsonBuilder
 import com.google.gson.annotations.SerializedName
 
 data class Rain(
+  @field:SerializedName("1h")
+  val precipVol1h: Double? = null
   @field:SerializedName("3h")
   val precipVol3h: Double? = null
 ) {
 
   fun hasPrecipVol3h(): Boolean = precipVol3h != null
+  fun hasPrecipVol1h(): Boolean = precipVol1h != null
 
   companion object Static {
     @JvmStatic
