@@ -56,13 +56,13 @@ task sourcesJar(type: Jar) {
   from sourceSets.main.allSource
 }
 
-task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
-  outputFormat = "javadoc"
-  outputDirectory = "$rootDir/docs"
-
-  jdkVersion = 8
-  impliedPlatforms = ["JVM"]
-}
+//task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
+//  outputFormat = "javadoc"
+//  outputDirectory = "$rootDir/docs"
+//
+//  jdkVersion = 8
+//  impliedPlatforms = ["JVM"]
+//}
 
 task deleteUnusedJavadocAssets(type: Delete, dependsOn: "dokkaJavadoc") {
   doLast {
@@ -82,13 +82,13 @@ task deleteUnusedJavadocAssets(type: Delete, dependsOn: "dokkaJavadoc") {
   }
 }
 
-task dokkaJavadocJar(type: Jar, dependsOn: "deleteUnusedJavadocAssets") {
-  classifier = "javadoc"
-  from "$rootDir/docs"
-}
+//task dokkaJavadocJar(type: Jar, dependsOn: "deleteUnusedJavadocAssets") {
+//  classifier = "javadoc"
+//  from "$rootDir/docs"
+//}
 
 artifacts {
-  archives dokkaJavadocJar, sourcesJar
+  archives sourcesJar
 }
 
 //signing {
