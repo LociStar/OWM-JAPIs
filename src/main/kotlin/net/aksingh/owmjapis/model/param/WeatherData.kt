@@ -54,6 +54,9 @@ data class WeatherData(
   @field:SerializedName("rain")
   val rainData: Rain? = null,
 
+  @field:SerializedName("pop")
+  val pop: Double? = null,
+
   @field:SerializedName("snow")
   val snowData: Snow? = null,
 
@@ -88,6 +91,8 @@ data class WeatherData(
   fun hasSystemData(): Boolean = systemData != null
 
   fun hasRainData(): Boolean = rainData != null
+
+  fun hasPopData(): Boolean = pop != null
 
   fun hasSnowData(): Boolean = snowData != null
 
